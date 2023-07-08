@@ -91,11 +91,16 @@ body {
 	width: 210px;
 	height: 310px;
 	padding: 29px;
+	padding-top: 18px;
 	border-radius: 40px;
 	margin: 0 40px 40px 0;
 	border: 1px solid #f3f3f3;
 	position: relative;
 	transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+	.cardImage {
+		width: 134px;
+		height: 143px;
+	}
 
 	&:hover {
 		box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.05);

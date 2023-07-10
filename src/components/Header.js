@@ -1,4 +1,4 @@
-export const  Header = () => {
+export const  Header = (props) => {
 	return(
 		<header className="header">
 				<div className="headerLeft">
@@ -9,7 +9,7 @@ export const  Header = () => {
 					</div>
 				</div>
 				<ul className="headerRight">
-					<li className="oneLi">
+					<li onClick={props.onClickCart} className="oneLi">
 						<img src="./img/card.svg" alt="card" />
 						<span>1205 руб.</span>
 					</li>

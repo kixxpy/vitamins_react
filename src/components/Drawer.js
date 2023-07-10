@@ -1,10 +1,10 @@
-export const Drawer = () => {
+export const Drawer = (props) => {
 	return (
-		<div style={{display: 'none'}} className="overlay">
+		<div className="overlay">
 			<div className="drawer">
 				<div className="cartTitle">
 					<h2>Корзина</h2>
-					<img src="./img/close.svg" alt="close" />
+					<img onClick={props.onClose}  src="./img/close.svg" alt="close" />
 				</div>
 
 				<div className="items">

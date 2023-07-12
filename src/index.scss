@@ -154,6 +154,7 @@ body {
 }
 
 .searchBlock {
+position: relative;
 	min-width: 250px;
 	border-radius: 10px;
 	border: 1px solid #f3f3f3;
@@ -311,4 +312,10 @@ body {
 			opacity: 1;
 		}
 	}
+}
+
+.searchClose {
+	position: absolute;
+	right: 10px;
+	cursor: pointer;
 }

@@ -1,29 +1,31 @@
-export const Drawer = (props) => {
+export const Drawer = ({ onClose, cartItems = [], deleteItemCart}) => {
+
+		
 	return (
 		<div className="overlay">
 			<div className="drawer">
 				<div className="cartTitle">
 					<h2>Корзина</h2>
-					<img onClick={props.onClose}  src="./img/close.svg" alt="close" />
+					<img onClick={onClose} src="./img/close.svg" alt="close" />
 				</div>
-
 				<div className="items">
-					<div className="cartItem">
-						<img width={69} height={73} src="./img/vitamins/1.jpg" alt="vitamins" />
-						<div className="cardContent">
-							<p>Витамины для взрослых и детей Омега-3</p>
-							<b>414 руб.</b>
+					{cartItems.map((obj) => (
+						<div className="cartItem">
+							<img width={69} height={73} src={obj.imgUrl} alt="vitamins" />
+							<div className="cardContent">
+								<p>{obj.name}</p>
+								<b>{obj.price} руб.</b>
+							</div>
+							<img
+								onClick={() => deleteItemCart(obj.id)}
+								className="cardBtn"
+								width={32}
+								height={32}
+								src="./img/close.svg"
+								alt="close"
+							/>
 						</div>
-						<img className="cardBtn" width={32} height={32} src="./img/close.svg" alt="close" />
-					</div>
-					<div className="cartItem">
-						<img width={69} height={73} src="./img/vitamins/1.jpg" alt="vitamins" />
-						<div className="cardContent">
-							<p>Витамины для взрослых и детей Омега-3</p>
-							<b>414 руб.</b>
-						</div>
-						<img className="cardBtn" width={32} height={32} src="./img/close.svg" alt="close" />
-					</div>
+					))}
 				</div>
 
 				<div className="cartTotalBlock">
